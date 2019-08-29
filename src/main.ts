@@ -9,7 +9,7 @@ async function run() {
     const MAJEURE = core.getInput('majeure');
     core.exportVariable('MAJEURE', MAJEURE);
 
-    const { stdout, stderr } = await exec("$MAJEURE.$(date +%m-%d).$(date -d '+1 hour' '+%H%M%S')");
+    const { stdout, stderr } = await exec("echo $MAJEURE.$(date +%m-%d).$(date -d '+1 hour' '+%H%M%S')");
 
     core.exportVariable('VERSION', stdout);
   } catch (error) {

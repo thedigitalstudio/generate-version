@@ -1,9 +1,26 @@
-# JavaScript Action Template
+# Version number generator action
 
-This template offers an easy way to get started writing a JavaScript action with TypeScript compile time support, unit testing with Jest and using the GitHub Actions Toolkit.
+This action intends to generate a timestamp based build number, handy for pusblishing builds.
 
 ## Getting Started
 
-See the walkthrough located [here](https://github.com/actions/toolkit/blob/master/docs/javascript-action.md).
+Use as a step like the following:
 
-In addition to walking your through how to create an action, it also provides strategies for versioning, releasing and referencing your actions.
+```yaml
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: thedigitalstudio/generate-version@master
+      with:
+        majeure: "v19-08"
+```
+
+This will make the two following environment variables accessible from subsequent steps`
+
+`${MAJEURE} : v19-08`
+
+`${VERSION} : v19-08.08-29.182327`
