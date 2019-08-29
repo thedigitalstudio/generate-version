@@ -1,6 +1,6 @@
 # Version number generator action
 
-This action intends to generate a timestamp based build number, handy for pusblishing builds.
+This action intends to generate a timestamp based build number, handy for publishing builds.
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ jobs:
         majeure: "v19-08"
 ```
 
-This will make the two following environment variables accessible from subsequent steps`
+This will make the two following environment variables accessible from subsequent steps
 
 `${MAJEURE} : v19-08`
 
