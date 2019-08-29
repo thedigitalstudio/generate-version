@@ -13,10 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - uses: thedigitalstudio/generate-version@master
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Generate version
+      uses: thedigitalstudio/generate-version@master
       with:
         majeure: "v19-08"
+    - name: Build the container
+      run: |
+        docker build -t myrepo/myimage:latest --build-arg VERSION=${VERSION} .
+        docker tag myrepo/myimage:latest myrepo/myimage:${MAJEURE}
+        docker tag myrepo/myimage:latest myrepo/myimage:${VERSION}
 ```
 
 This will make the two following environment variables accessible from subsequent steps
