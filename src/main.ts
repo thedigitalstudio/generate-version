@@ -12,9 +12,10 @@ async function run() {
 
     const { stdout, stderr } = await exec("echo -n $MAJEURE.$(date +%m-%d).$(date -d '+1 hour' '+%H%M%S')");
 
-    core.exportVariable('VERSION', stdout);
+    const output = stdout.trim();
+    core.exportVariable('VERSION', output);
+    core.setOutput('VERSION', output);
 
-    core.setOutput('VERSION', stdout);
   } catch (error) {
     core.setFailed(error.message);
   }
