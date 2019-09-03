@@ -5,6 +5,11 @@ inputs:
   majeure:
     description: 'Majeure version number'
     default: 'v19-08'
+outputs:
+  MAJEURE:
+    description: 'Majeure version number. Available as an Environment variable'
+  VERSION:
+    description: 'Generated version number. Available as an Environment variable'
 runs:
   using: 'node12'
   main: 'lib/main.js'
