@@ -1,6 +1,6 @@
-name: 'Generate the SAMQuote Version number'
-description: 'Get started with Node actions'
-author: 'GitHub'
+name: 'Generate Version action'
+description: 'Generate a version number'
+author: 'Rémi DEBETTE'
 inputs:
   majeure:
     description: 'Majeure version number'

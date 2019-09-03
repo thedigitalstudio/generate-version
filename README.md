@@ -31,3 +31,5 @@ This will make the two following environment variables accessible from subsequen
 `${MAJEURE} : v19-08`
 
 `${VERSION} : v19-08.08-29.182327`
+
+Those variables will also be available from the workflow YAML itself using the syntax ${{ steps.<step id>.outputs.VERSION }}
